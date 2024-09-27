@@ -1,0 +1,51 @@
+.todo-list {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f0f8ff;
+    /* Light blue background */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    /* Bootstrap primary color */
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* Darker blue */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}

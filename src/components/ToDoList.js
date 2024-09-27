@@ -16,6 +16,25 @@ const ToDoList = () => {
         setTasks(newTasks);
     };
 
-
+    return (
+        <div className="todo-list">
+            <h1>Stuff I Need To Do</h1>
+            <input
+                type="text"
+                placeholder="Add a new task"
+                value={taskInput}
+                onChange={(e) => setTaskInput(e.target.value)}
+            />
+            <button onClick={handleAddTask}>Add Task</button>
+            <ul>
+                {tasks.map((task, index) => (
+                    <li key={index}>
+                        {task}
+                        <button onClick={() => handleDeleteTask(index)}>Delete</button>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
 }
 
