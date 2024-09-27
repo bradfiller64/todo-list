@@ -1,51 +1,124 @@
+body {
+    background-color: #1c1c1c;
+    /* Dark background for contrast */
+    font-family: 'Courier New', Courier, monospace;
+    /* Monospace font for a lofi feel */
+    color: #f0f0f0;
+    /* Light text color */
+}
+
 .todo-list {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #f0f8ff;
-    /* Light blue background */
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #2e2e2e;
+    /* Darker background for the container */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    /* Neon green glow */
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    /* Neon green border */
 }
 
 h1 {
     text-align: center;
+    color: #00ff00;
+    /* Bright green color for the title */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+    /* Glowing effect */
+}
+
+.input-container {
+    display: flex;
+    align-items: stretch;
+    /* Ensure input and button are the same height */
+    margin-bottom: 20px;
+    /* Space between the input container and the task list */
 }
 
 input {
-    width: calc(100% - 22px);
+    width: 70%;
+    /* Keep the width for the input */
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    padding: 10px;
-    margin-left: 5px;
+    /* Padding inside the input */
+    margin-right: 10px;
+    /* Space between input field and Add button */
     border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    /* Bootstrap primary color */
-    color: white;
-    cursor: pointer;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    /* Input background */
+    color: #fff;
+    /* Input text color */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    /* Center text in the input */
 }
 
-button:hover {
-    background-color: #0056b3;
-    /* Darker blue */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    /* Placeholder color */
+}
+
+.add-button {
+    width: 80px;
+    /* Fixed width for the Add button */
+    padding: 8px;
+    /* Reduced padding for the button */
+    border: none;
+    border-radius: 5px;
+    background-color: #00ff00;
+    /* Neon green button */
+    color: #1c1c1c;
+    /* Dark text color for contrast */
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Smooth transition */
+}
+
+.add-button:hover {
+    background-color: #00cc00;
+    /* Darker green on hover */
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+    /* Glow effect on hover */
 }
 
 ul {
-    list-style-type: none;
+    margin-top: 40px;
+    /* Add space between the input container and the list of tasks */
     padding: 0;
 }
 
 li {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #3a3a3a;
+    /* Dark background for list items */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    /* Neon green glow */
+}
+
+li button {
+    background-color: #00ccff;
+    /* Cyan button for delete */
+    padding: 5px 10px;
+    /* Smaller padding */
+    border: none;
+    border-radius: 5px;
+    color: #1c1c1c;
+    /* Dark text color for contrast */
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 204, 255, 0.5);
+    /* Glow effect */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Smooth transition */
+}
+
+li button:hover {
+    background-color: #0099cc;
+    /* Darker cyan on hover */
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.8);
+    /* Glow effect on hover */
 }

@@ -20,13 +20,15 @@ const ToDoList = () => {
     return (
         <div className="todo-list">
             <h1>Stuff I Need To Do</h1>
-            <input
-                type="text"
-                placeholder="Add a new task"
-                value={taskInput}
-                onChange={(e) => setTaskInput(e.target.value)}
-            />
-            <button onClick={handleAddTask}>Add Task</button>
+            <div className="input-container">
+                <input
+                    type="text"
+                    placeholder="Add a new task"
+                    value={taskInput}
+                    onChange={(e) => setTaskInput(e.target.value)}
+                />
+                <button className="add-button" onClick={handleAddTask}>Add Task</button>
+            </div>
             <ul>
                 {tasks.map((task, index) => (
                     <li key={index}>
@@ -36,7 +38,7 @@ const ToDoList = () => {
                 ))}
             </ul>
         </div>
-    )
+    );
 }
 
 export default ToDoList;
