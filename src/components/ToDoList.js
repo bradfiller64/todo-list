@@ -44,15 +44,17 @@ const ToDoList = () => {
                     onChange={(e) => setTaskInput(e.target.value)}
                 />
                 <button className="add-button" onClick={handleAddTask}>
-                    {editTask !== null ? 'Update Task' : 'Add Task'}
+                    {editTask !== null ? 'Edit Task' : 'Add Task'}
                 </button>
             </div>
             <ul>
                 {tasks.map((task, index) => (
                     <li key={index}>
                         {task}
-                        <button onClick={() => handleEditTask(index)}>Edit</button>
-                        <button onClick={() => handleDeleteTask(index)}>Delete</button>
+                        <div className="button-container">
+                            <button className="edit-button" onClick={() => handleEditTask(index)}>Edit</button>
+                            <button className="delete-button" onClick={() => handleDeleteTask(index)}>Delete</button>
+                        </div>
                     </li>
                 ))}
             </ul>

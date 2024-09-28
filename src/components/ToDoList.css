@@ -102,6 +102,13 @@ li {
     /* Neon green glow */
 }
 
+/* Flex container to align buttons */
+.button-container {
+    display: flex;
+    gap: 10px;
+    /* Space between buttons */
+}
+
 li button {
     background-color: #00ccff;
     /* Cyan button for delete */
@@ -118,9 +125,27 @@ li button {
     /* Smooth transition */
 }
 
-li button:hover {
+li .edit-button {
+    background-color: #ffa500;
+    /* Orange color for the Edit button */
+    margin-right: 10px;
+    /* Add space between Edit and Delete buttons */
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+}
+
+li .edit-button:hover {
+    background-color: #e69500;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+}
+
+/* Delete Button Styles */
+li .delete-button {
+    background-color: #00ccff;
+    /* Cyan color for the Delete button */
+    box-shadow: 0 0 5px rgba(0, 204, 255, 0.5);
+}
+
+li .delete-button:hover {
     background-color: #0099cc;
-    /* Darker cyan on hover */
     box-shadow: 0 0 10px rgba(0, 204, 255, 0.8);
-    /* Glow effect on hover */
 }
