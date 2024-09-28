@@ -4,12 +4,28 @@ import './ToDoList.css';
 const ToDoList = () => {
     const [tasks, setTasks] = useState([]);
     const [taskInput, setTaskInput] = useState('');
+    const [editTask, setEditTask] = useState(null);
 
     const handleAddTask = () => {
         if (taskInput.trim() !== '') {
-            setTasks([...tasks, taskInput]);
+            if (editTask !== null) {
+                // Update task
+                const updatedTasks = tasks.map((task, index) =>
+                    index === editTask ? taskInput : task
+                );
+                setTasks(updatedTasks);
+                setEditTask(null);
+            } else {
+                // Add new task
+                setTasks([...tasks, taskInput]);
+            }
             setTaskInput('');
         }
+    };
+
+    const handleEditTask = (index) => {
+        setTaskInput(tasks[index]); // Populate input with the task to edit
+        setEditTask(index); // Store the index of the task being edited
     };
 
     const handleDeleteTask = (index) => {
@@ -19,7 +35,7 @@ const ToDoList = () => {
 
     return (
         <div className="todo-list">
-            <h1>Stuff I Need To Do</h1>
+            <h1>Stuff I Need To Do:</h1>
             <div className="input-container">
                 <input
                     type="text"
@@ -27,12 +43,15 @@ const ToDoList = () => {
                     value={taskInput}
                     onChange={(e) => setTaskInput(e.target.value)}
                 />
-                <button className="add-button" onClick={handleAddTask}>Add Task</button>
+                <button className="add-button" onClick={handleAddTask}>
+                    {editTask !== null ? 'Update Task' : 'Add Task'}
+                </button>
             </div>
             <ul>
                 {tasks.map((task, index) => (
                     <li key={index}>
                         {task}
+                        <button onClick={() => handleEditTask(index)}>Edit</button>
                         <button onClick={() => handleDeleteTask(index)}>Delete</button>
                     </li>
                 ))}
